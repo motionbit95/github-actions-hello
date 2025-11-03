@@ -17,4 +17,3 @@ jobs:
           curl -H "Authorization: Bearer $TOKEN" \
                -H "Accept: application/vnd.github+json" \
                $BASE_URL
-
