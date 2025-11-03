@@ -16,6 +16,9 @@ jobs:
 
       - name: Add Greeting Comment
         run: |
+          # gh pr comment 명령어를 사용하여 현재 PR에 댓글을 답니다.
+          # GITHUB_HEAD_REF는 PR이 생성된 소스 브랜치 이름입니다.
+          # GITHUB_ACTOR는 PR 작성자(실행자)의 GitHub ID입니다.
           gh pr comment "${GITHUB_HEAD_REF}" \
             --body "안녕하세요, ${GITHUB_ACTOR}님! 👋 코드 리뷰를 시작합니다 😊"
         env:
