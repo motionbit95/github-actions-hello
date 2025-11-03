@@ -5,7 +5,7 @@ jobs:
   detect-branch:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "현재 브랜치: ${{ github.ref_name }}"
+      - run: echo "현재 브랜치 - ${{ github.ref_name }}"
 
       - name: Dev Branch Only
         if: ${{ github.ref_name == 'dev' }}
