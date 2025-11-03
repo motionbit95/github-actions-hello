@@ -5,11 +5,14 @@ jobs:
   recovery:
     runs-on: ubuntu-latest
     steps:
-      - run: exit 1   # 실패 유도
+      - name: Fail Intentionally
+        run: exit 1
+        continue-on-error: true   # 이 줄이 핵심
+
       - name: Recover
         if: ${{ failure() }}
         run: echo "이전 단계 실패 감지 → 복구 스크립트 실행"
+
       - name: Always Run
         if: ${{ always() }}
         run: echo "이 단계는 항상 실행됩니다."
-
